@@ -21,6 +21,7 @@ $breakpoints: (
 ///		)
 ///	);
 ///
+
 $media-expressions: (
   "screen": "screen",
   "print": "print",
@@ -58,11 +59,13 @@ $media-expressions: (
 ///	 /* Generates: */
 ///	 @media (min-width: 2.1rem) {}
 ///
+
 $unit-intervals: (
   "px": 1,
   "em": 0.01,
   "rem": 0.1,
 ) !default;
+
 ///
 /// Generates a media query based on a list of conditions
 ///
@@ -88,6 +91,7 @@ $unit-intervals: (
 /// @example scss - Mixing everything
 ///  @include media(">=350px", "<tablet", "retina3x") { }
 ///
+
 @mixin media($conditions...) {
   @for $i from 1 through length($conditions) {
     $conditions: set-nth(
@@ -124,6 +128,7 @@ $unit-intervals: (
 ///
 /// @return {List | Null}
 ///
+
 @function get-query-branches($expressions) {
   $result: "";
   $has-groups: false;
@@ -180,6 +185,7 @@ $unit-intervals: (
 ///
 /// @return {String | Null}
 ///
+
 @function parse-expression($expression) {
   $operator: "";
   $value: "";
@@ -249,6 +255,7 @@ $unit-intervals: (
 ///
 /// @return {String | Null}
 ///
+
 @function str-replace-first($search, $replace, $subject) {
   $search-start: str-index($subject, $search);
 
@@ -272,6 +279,7 @@ $unit-intervals: (
 ///
 /// @return {List | Null}
 ///
+
 @function to-number($string) {
   // Matrices
   $strings: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
